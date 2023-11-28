@@ -36,10 +36,11 @@
         </p>
     </div>
     
-    <script>
-        window.alert('Minha primeira mensagem em JavaScript!')
-        window.confirm('Você está gostando de JS?')
-        window.prompt('Qual é seu nome?')
+    <script> // Sempre colocar os scripts antes no final, antes de terminar o <body> e nunca no início dele.
+    var n1 = Number(window.prompt('Digite um número: ')) /* O Number() vai converter o resultado do prompt que é uma string em um número, nesse caso, o próprio JavaScript vai analisar se é um Float ou Int. Caso queira converter em um float ou int, apenas colocar Number.parseInt ou Number.parseFloat */
+    var n2 = Number(window.prompt('Digite outro número: '))
+    var s = n1 + n2
+    window.alert(`A soma entre ${n1} e ${n2} é igual a ${s} `) //Template String - união com crase e sifrão
     </script>
 </body>
 </html>
