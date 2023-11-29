@@ -32,19 +32,14 @@
     <div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi saepe, soluta quos repellendus deserunt vel earum? <p>
             Ipsam, libero error. Vel incidunt architecto at qui repellendus beatae. Deleniti itaque animi dicta.</p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptatum tempora earum, soluta doloremque nobis mollitia fugit voluptates.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptatum tempora earum, soluta doloremque nobis mollitia fugit voluptates. Ratione quas impedit odio maiores! Omnis odit recusandae aspernatur numquam soluta quas? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga adipisci magnam ipsam facere nostrum illum consequuntur eos quasi dolor earum, at iure assumenda repellendus nisi autem, laborum, est veniam? Dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus laboriosam amet architecto voluptatem doloribus enim, similique eos obcaecati excepturi sequi saepe tenetur. A optio, nihil reprehenderit enim eaque distinctio voluptas.
         </p>
     </div>
     
-    <script> // Sempre colocar os scripts antes no final, antes de terminar o <body> e nunca no início dele.
-    var n1 = Number(window.prompt('Digite um número: ')) /* O Number() vai converter o resultado do prompt que é uma string em um número, nesse caso, o próprio JavaScript vai analisar se é um Float ou Int. Caso queira converter em um float ou int, apenas colocar Number.parseInt ou Number.parseFloat */
-    var n2 = Number(window.prompt('Digite outro número: '))
-    var s = n1 + n2
-    window.alert(`A soma entre ${n1} e ${n2} é igual a ${s} `) //Template String - união com crase e sifrão
-    </script>
     <script>
-        var n3 = Number(window.prompt('Digite um número: '))
-        window.alert(n3.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'})) /* Comando para passar um number para Real. Obs: no lugar de BRL, pode-se usar EUR (euro), USD (dólar)... */
+        var nome = window.prompt('Qual é seu nome?')
+        document.writeln(`<br> Seu nome é ${nome} e tem ${nome.length} letras. <br>`)
+        document.writeln(`Seu nome em minúsculas é ${nome.toLocaleLowerCase()} e em maiúsculas é ${nome.toLocaleUpperCase()}.`)
     </script>
 </body>
 </html>
