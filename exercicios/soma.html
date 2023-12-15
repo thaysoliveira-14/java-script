@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+
+        body {
+            background-color: rgba(83, 153, 141, 0.644);
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        div#numeros {
+            display: flex;
+            justify-content: center;
+            margin: 20px ;
+        }
+
+        div#numeros input, div#numeros p {
+            margin: 5px;
+        }
+
+        input[type = button] {
+            width: 50px;
+            height: 20px;
+        }
+
+        button {
+            width: 50px;
+            height: 20px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Números com JavaScript</h1>
+    <div id="numeros">
+        <input type="number" name="n1" id="n1">
+        <p>+</p>
+        <input type="number" name="n2" id="n2">
+        <input type="button" value="Somar" id="bt-somar">
+        <button type="reset">Limpar</button>
+    </div>
+    <div>
+        <p id="resultado">RESULTADO</p>
+    </div>
+
+    <script>
+        document.getElementById('bt-somar').addEventListener('click' , somar)
+
+        function somar() {
+            const num1 = document.getElementById('n1')
+            const num2 = document.getElementById('n2')
+            let res = document.getElementById('resultado')
+            let numero1 = Number(num1.value)
+            let numero2 = Number(num2.value)
+            let soma = numero1 + numero2
+
+            res.innerHTML = `O resultado da soma entre ${numero1} e ${numero2} é igual a ${soma}`
+        }
+
+    </script>
+</body>
+</html>

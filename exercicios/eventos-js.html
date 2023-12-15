@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos JS</title>
+    <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(0, 174, 255);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        div#quadrado {
+            width: 250px;
+            height: 250px;
+            margin: 40px auto;
+            background-color: rgb(0, 255, 21);
+            border: 3px solid black;
+            border-radius: 5px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.479);
+            text-align: center;
+        }
+
+        div#quadrado p {
+            padding: 10px;
+            margin-top: 50px;
+            font-weight: bolder;
+            color: white;
+            text-shadow: 1px 1px 5px black;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos usando a função addEventListener</h1>
+    <div id="quadrado">
+        <p>
+            Interaja com o quadrado!!!
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('quadrado').addEventListener('click' , clicar)
+        document.getElementById('quadrado').addEventListener('mouseenter' , entrar)
+        document.getElementById('quadrado').addEventListener('mouseout' , sair)
+
+        function clicar() {
+            const meuQuadrado = document.getElementById('quadrado')
+            meuQuadrado.innerHTML = 'Clicou!'
+            meuQuadrado.style.background = 'red'
+            meuQuadrado.style.fontSize = '2em'
+            meuQuadrado.style.color = 'white'
+            meuQuadrado.style.textShadow = '1px 1px 5px black'
+            meuQuadrado.style.paddingTop = '50px'
+            }
+
+        function entrar() {
+            const meuQuadrado = document.getElementById('quadrado')
+            meuQuadrado.innerHTML = 'Entrou!'
+            meuQuadrado.style.fontSize = '2em'
+            meuQuadrado.style.color = 'white'
+            meuQuadrado.style.textShadow = '1px 1px 5px black'
+            meuQuadrado.style.paddingTop = '50px'
+        }
+
+        function sair() {
+            const meuQuadrado = document.getElementById('quadrado')
+            meuQuadrado.innerHTML = 'Saiu!'
+            meuQuadrado.style.background = 'rgb(0, 255, 21)'
+            meuQuadrado.style.fontSize = '2em'
+            meuQuadrado.style.color = 'white'
+            meuQuadrado.style.textShadow = '1px 1px 5px black'
+            meuQuadrado.style.paddingTop = '50px'
+        }
+
+    </script>
+</body>
+</html>
