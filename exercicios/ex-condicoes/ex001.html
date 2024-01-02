@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificaçao de números</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgba(174, 0, 255, 0.308);
+        }
+
+        h1 {
+            margin: 10px;
+        }
+
+        label {
+            margin-left: 20px;
+            font-size: 1.5em;
+
+        }
+
+        input {
+            width: 80px;
+            height: 30px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        button {
+            padding: 5px;
+            margin-left: 10px;
+        }
+        
+        p {
+            margin-top: 15px;
+            margin-left: 20px;
+            font-size: 1.5em;
+            background-color: rgb(122, 75, 167);
+            display: none;
+            padding: 5px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Classificação de Números</h1>
+    <form action="" id="formulario">
+        <label for="numero">Digite um número:</label>
+        <input type="number" name="numero" id="numero">
+        <button type="submit" id="b-classificar">Classificar</button>
+        <button type="reset">Limpar</button>
+    </form>
+    <p id="resultado"></p>
+    <script>
+        document.getElementById('formulario').addEventListener('submit' , classificar)
+
+        function classificar() {
+            event.preventDefault()
+            let num = document.getElementById('numero').value
+            let resultado = document.getElementById('resultado')
+
+            resultado.style.display = "inline-block"
+
+            if(num > 0){
+                document.getElementById('resultado').innerHTML = `O número ${num} é POSITIVO`
+            } else if(num < 0) {
+                document.getElementById('resultado').innerHTML = `O número ${num} é NEGATIVO`
+            } else{
+                document.getElementById('resultado').innerHTML = `O número é ZERO`
+            }
+        }
+    </script>
+</body>
+</html>

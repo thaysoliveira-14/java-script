@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validando Formulários</title>
+</head>
+<body>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 25px;
+            background-color: rgb(17, 52, 116);
+            color: white;
+            padding: 15px;
+        }
+
+        form {
+            margin: 25px auto;
+            font-size: 1.5em;
+            width: 300px;
+            text-align: left;
+        }
+
+        input {
+            padding: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            height: 30px;
+            background-color: rgb(17, 52, 116);
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Validador de formulário simples</h1>
+    <form id="formulario">
+        
+        <p>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
+        </p>
+        <p>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Seu email" required>
+        </p>
+        <p>
+            <label for="Senha">Senha</label>
+            <input type="password" name="senha" id="senha" placeholder="Sua senha" minlength="8" required>
+        </p>
+        <input type="submit" value="Enviar" id="bt-enviar">
+    </form>
+    <script>
+        document.getElementById("bt-enviar").addEventListener('click' , validarSenha) // Evento criado para o botão de Enviar
+
+        function validarSenha() {
+            const nome = document.getElementById('nome')
+            const email = document.getElementById('email')
+            const senha = document.getElementById('senha')
+
+            if (nome.value === '' || email.value === '') {
+                event.preventDefault()
+                alert("Preencha os campos solicitados")
+            }
+
+            if (senha.value.length < '8') {
+                event.preventDefault()
+                alert("A senha deve conter no mínimo 8 caracteres")
+            }
+        }
+    </script>
+</body>
+</html>
