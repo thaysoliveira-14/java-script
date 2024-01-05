@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <style>
+        body {
+            background-color: rgba(90, 170, 216, 0.61);
+        }
+
+        form {
+            font-size: 1.5em;
+        }
+
+        div {
+            padding: 5px;
+            width: 223px;
+        }
+
+        input {
+            width: 60px;
+            height: 25px;
+            text-align: center;
+        }
+
+        button {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        div#botoes {
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.5em;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de IMC</h1>
+    <h2>Digite os dados solicitados abaixo.</h2>
+    <form action="" id="formulario">
+        <div>
+            <label for="peso">Peso (kg)</label>
+            <input type="number" name="peso" id="peso">
+        </div>
+        <div>
+            <label for="altura">Altura (metros)</label>
+            <input type="number" name="altura" id="altura">
+        </div>
+        <div id="botoes">
+            <button type="submit" id="submit">Calcular</button>
+            <button type="reset" id="reset">Limpar</button>
+        </div>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        document.getElementById('submit').addEventListener('click' , calcular)
+
+        document.getElementById('reset').addEventListener('click' , limpar)
+
+        function calcular(event) {
+            event.preventDefault();
+            let peso = parseFloat(document.getElementById('peso').value)
+            let altura = parseFloat(document.getElementById('altura').value)
+            let imc = peso / (altura*altura)
+            let resultado = document.getElementById('resultado')
+
+            if(imc < 18.5) {
+                resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)}. Você está abaixo do peso.`
+            } else if(imc >= 18.5 && imc < 24.9) {
+                resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)}. Você está no peso ideal.`
+            } else {
+                resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)}. Você está acima do peso.`
+            }
+
+        }
+
+        function limpar() {
+            let resultado = document.getElementById('resultado')
+
+            resultado.innerHTML = ""
+        }
+    </script>
+</body>
+</html>

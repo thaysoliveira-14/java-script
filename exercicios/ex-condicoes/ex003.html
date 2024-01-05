@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Bissexto</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgba(174, 0, 255, 0.308);
+        }
+
+        h1 {
+            margin: 10px;
+        }
+
+        label {
+            margin-left: 20px;
+            font-size: 1.5em;
+
+        }
+
+        input {
+            width: 80px;
+            height: 30px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        button {
+            padding: 5px;
+            margin-left: 10px;
+        }
+        
+        p {
+            margin-top: 15px;
+            margin-left: 20px;
+            font-size: 1.5em;
+            background-color: rgb(122, 75, 167);
+            display: none;
+            padding: 5px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+    <form action="" id="formulario">
+        <label for="ano">Digite um ano:</label>
+        <input type="number" name="ano" id="ano" required>
+        <button type="submit" id="b-classificar">Classificar</button>
+        <button type="reset" id="reset">Limpar</button>
+    </form>
+    <p id="resultado"></p>
+    <script>
+        document.getElementById('b-classificar').addEventListener('click' , calcular)
+
+        document.getElementById('reset').addEventListener('click' , limpar)
+
+        function calcular(event) {
+            event.preventDefault()
+
+            let ano = document.getElementById('ano').value
+            let resultado = document.getElementById('resultado')
+
+            resultado.style.display = "inline-block"
+
+            if(ano % 4 === 0) {
+                resultado.innerHTML = "Ano Bissexto"
+            } else if(ano % 100 != 0) {
+                resultado.innerHTML = "Ano não Bissexto"
+            } else if(ano % 400 === 0) {
+                resultado.innerHTML = "Ano Bissexto"
+            } else{
+                resultado.innerHTML = "Ano não Bissexto"
+            }
+                
+        }
+
+        function limpar() {
+            document.getElementById('resultado').style.display = 'none'
+        }
+    </script>
+</body>
+</html>
