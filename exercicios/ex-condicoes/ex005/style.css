@@ -32,9 +32,7 @@ section {
     align-items: center;
 }
 
-div#imagem {
-    background: black url('imagens/manha.jpg') center center no-repeat fixed;
-    background-size: cover;
+#imagem {
     width: 210px;
     height: 210px;
     border-radius: 50%;
