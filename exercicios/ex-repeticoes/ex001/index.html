@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de passos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+    <main>
+        <section>
+            <form action="">
+                <p>
+                    <label for="inicio">Início:</label>
+                    <input type="number" name="inicio" id="inicio">
+                </p>
+
+                <p>
+                    <label for="fim">Fim:</label>
+                    <input type="number" name="fim" id="fim">
+                </p>
+
+                <p>
+                    <label for="passo">Passo:</label>
+                    <input type="number" name="passo" id="passo">
+                </p>
+
+                <p>
+                    <input type="button" value="Contar" onclick="contagem()">
+                </p>
+            </form>
+        </section>
+        <section>
+            <p id="resultado">Preparando a contagem...</p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 - <i>Site desenvolvido por Thays Oliveira</i>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
